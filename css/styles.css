@@ -5,9 +5,50 @@
     box-sizing: border-box;
 }
 
+:root {
+    --background-gradient: linear-gradient(135deg, #153677, #4e085f);
+    --header: #002765;
+    --todo-background: #edeef0;
+}
+
 .container {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg #153677, #4e085f);
+    background: var(--background-gradient);
     padding: 10px;
+}
+
+
+/* Todo Box */
+.todo {
+    width: 100%;
+    max-width: 540px;
+    background: white;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo h1 {
+    color: var(--header);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo h1 img {
+    width: 50px;
+    margin-left: 10px;
+}
+
+
+/* Add Todo */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--todo-background);
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
 }
