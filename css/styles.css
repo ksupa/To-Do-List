@@ -1,101 +1,101 @@
 * {
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Poppins, sans-serif;
-    box-sizing: border-box;
 }
 
 :root {
     --background-gradient: linear-gradient(135deg, #153677, #4e085f);
+    --button-background: #ff5945;
     --header: #002765;
     --todo-background: #edeef0;
-    --button-background: #ff5945;
     --todo-box: #fffff2
 }
 
 .container {
-    width: 100%;
-    min-height: 100vh;
     background: var(--background-gradient);
+    min-height: 100vh;
     padding: 10px;
+    width: 100%;
 }
 
 
 /* Todo Box */
 .todo {
-    width: 100%;
-    max-width: 540px;
     background: var(--todo-box);
-    margin: 100px auto 20px;
-    padding: 40px 30px 70px;
     border-radius: 10px;
+    margin: 100px auto 20px;
+    max-width: 540px;
+    padding: 40px 30px 70px;
+    width: 100%;
 }
 
 .todo h1 {
+    align-items: center;
     color: var(--header);
     display: flex;
-    align-items: center;
     margin-bottom: 20px;
 }
 
 .todo h1 img {
-    width: 50px;
     margin-left: 10px;
+    width: 50px;
 }
 
 
 /* Add Todo */
 .row {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
     background: var(--todo-background);
     border-radius: 30px;
-    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 25px;
+    padding-left: 20px;
 }
 
 input {
-    flex: 1;
-    border: none;
-    outline: none;
     background: transparent;
+    border: none;
+    flex: 1;
+    outline: none;
     padding: 10px;
 }
 
 button {
+    background: var(--button-background);
     border: none;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
     outline: none;
     padding: 16px 50px;
-    background: var(--button-background);
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 40px;
 }
 
 
 /* Todo List */
 ul li {
-    list-style: none;
-    font-size: 17px;
-    padding: 12px 8px 12px 50px;
-    user-select: none;
     cursor: pointer;
-    position: relative; 
+    font-size: 17px;
+    list-style: none;
+    padding: 12px 8px 12px 50px;
+    position: relative;
+    user-select: none;
 }
 
 ul li::before {
-    content: '';
-    position: absolute;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
     background-image: url(../img/unchecked.png);
-    background-size: cover;
     background-position: center;
-    top: 9px;
+    background-size: cover;
+    border-radius: 50%;
+    content: '';
+    height: 28px;
     left: 8px;
+    position: absolute;
+    top: 9px;
+    width: 28px;
 }
 
 ul li.completed {
@@ -108,16 +108,16 @@ ul li.completed::before {
 }
 
 ul li span {
+    border-radius: 50%;
+    color: #555;
+    font-size: 22px;
+    height: 40px;
+    line-height: 40px;
     position: absolute;
     right: 0;
+    text-align: center;
     top: 5px;
     width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
 }
 
 ul li span:hover {

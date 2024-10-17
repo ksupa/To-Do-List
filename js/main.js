@@ -15,13 +15,27 @@ function addTask() {
         span.innerHTML = '\u00d7';
         li.appendChild(span);
     }
+
+    saveData();
 }
 
 listContainer.addEventListener('click', function(e) {
     if(e.target.tagName === 'LI') {
         e.target.classList.toggle('completed');
+        saveData();
     }
     else if (e.target.tagName === 'SPAN') {
         e.target.parentElement.remove();
+        saveData();
     }
 }, false)
+
+function saveData() {
+    localStorage.setItem('todos', listContainer.innerHTML);
+}
+
+function showList() {
+    listContainer.innerHTML = localStorage.getItem('todos');
+}
+
+showList();
