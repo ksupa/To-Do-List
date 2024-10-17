@@ -10,6 +10,7 @@
     --header: #002765;
     --todo-background: #edeef0;
     --button-background: #ff5945;
+    --todo-box: #fffff2
 }
 
 .container {
@@ -24,7 +25,7 @@
 .todo {
     width: 100%;
     max-width: 540px;
-    background: white;
+    background: var(--todo-box);
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
     border-radius: 10px;
@@ -68,7 +69,40 @@ button {
     padding: 16px 50px;
     background: var(--button-background);
     color: white;
-    font-size: 1rem;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 40px;
+}
+
+
+/* Todo List */
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative; 
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(../img/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 9px;
+    left: 8px;
+}
+
+ul li.completed {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.completed::before {
+    background-image: url(../img/checked.png);
 }
